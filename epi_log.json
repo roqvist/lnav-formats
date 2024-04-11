@@ -1,0 +1,52 @@
+{
+        "epi_log": {
+                "title": "Episerver Log Format",
+                "description": "Log format used for Episerver log files",
+                "file-pattern": "EPiServerLog.txt.*",
+        "timestamp-field": "timestamp",
+        "opid-field": "opid",
+        "module-field": "module",
+        "timestamp-format": [
+            "%Y-%m-%d %H:%M:%S,%L"
+        ],
+                "regex": {
+                        "basic": {
+                                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})\\s\\[(?<runner>[\\w\\s\\#]+)\\]\\s+(?<level>\\w+)\\s+(?<component>[\\w\\.]+)\\s\\[(?<inner>[\\w\\(\\)]+)\\]\\s-\\s(?<body>.*)($|\\n)"
+                        }
+                },
+                "level": {
+                        "error": "ERROR",
+                        "debug": "DEBUG",
+                        "warning": "WARN",
+                        "info": "(INFO|VERBOSE)"
+                },
+                "value": {
+                        "component": {
+                                "kind": "string",
+                                "identifier": true
+                        },
+            "runner": {
+                "kind": "string",
+                "identifier": true
+            },
+            "module": {
+                "kind": "string",
+                "identifier": true
+            },
+            "opid": {
+                "kind": "string",
+                "identifier": true
+            },
+            "inner": {
+                "kind": "string",
+                "identifier": true
+            }
+                },
+                "sample": [
+            {
+                "line": "2019-08-15 14:49:01,491 [50] WARN  EPiServer.Framework.Initialization.Internal.ShutdownTracker [(null)] - ASP.NET shutting down due to BinDirChangeOrDirectoryRename",
+                "level": "warning"
+            }
+        ]
+        }
+}
