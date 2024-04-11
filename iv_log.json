@@ -1,0 +1,62 @@
+{
+        "iv_log": {
+                "title": "ImageVault Log Format",
+                "description": "Log format used for ImageVault log files",
+                "file-pattern": "(ImageVaultLog|SqlLog|RedisLog|OwinLog|CorePluginLog|EPiServerLog|ivclientverbose).txt.*",
+        "timestamp-field": "timestamp",
+        "opid-field": "opid",
+        "module-field": "module",
+        "timestamp-format": [
+            "%Y-%m-%d %H:%M:%S,%L"
+        ],
+                "regex": {
+                        "basic": {
+                                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})\\s+(?<level>\\w+)\\s+\\[(?<thread>[^\\]]+)\\]\\[(?<type>[^\\s]+)\\]\\s(?<method>[^\\s]+)\\s-\\s(?<body>.*)($|\\n)"
+                        }
+                },
+                "level": {
+                        "error": "ERROR",
+                        "debug": "DEBUG",
+                        "warning": "WARN",
+            "info": "INFO",
+            "debug2": "VERBOSE",
+            "trace": "TRACE"
+                },
+                "value": {
+            "type": {
+                "kind": "string",
+                "identifier": true
+            },
+            "method": {
+                "kind": "string",
+                "identifier": true
+            },
+                        "component": {
+                                "kind": "string",
+                                "identifier": true
+                        },
+            "thread": {
+                "kind": "string",
+                "identifier": true
+            },
+            "logger": {
+                "kind": "string",
+                "identifier": true
+            },
+            "opid": {
+                "kind": "string",
+                "identifier": true
+            }
+                },
+                "sample": [
+            {
+                "line": "2019-08-16 09:19:03,927 DEBUG [26][ImageVault.UI.Mvc.Application] StartScheduledJobEngine - got service",
+                "level": "debug"
+            },
+            {
+                "line": "2019-08-16 09:34:18,376 WARN  [17][EPiServer.Logging.Compatibility.LogManager+CompatibilityWrapper] WarnFormat - 10s warning - due time is Thursday, 15 August 2019 14:30:00",
+                "level": "warning"
+            }
+        ]
+        }
+}
