@@ -1,0 +1,19 @@
+{
+  "$schema": "https://lnav.org/schemas/config-v1.schema.json",
+  "tuning": {
+    "clipboard": {
+      "impls": {
+        "Wayland": {
+          "test": false
+        },
+        "WSL": {
+          "test": "command -v /mnt/c/Windows/System32/clip.exe",
+          "general": {
+            "write": "/mnt/c/Windows/System32/clip.exe"
+          }
+        }
+      }
+    }
+  }
+
+}
