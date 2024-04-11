@@ -6,6 +6,7 @@
         "timestamp-field": "timestamp",
         "opid-field": "opid",
         "module-field": "module",
+        "url": "https://regex101.com/r/F1nr49/",
         "timestamp-format": [
             "%Y-%m-%d %H:%M:%S,%L"
         ],
