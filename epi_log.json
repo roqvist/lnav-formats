@@ -4,6 +4,7 @@
                 "description": "Log format used for Episerver log files",
                 "file-pattern": "EPiServerLog.txt.*",
         "timestamp-field": "timestamp",
+        "url": "https://regex101.com/r/FFGLEl/",
         "opid-field": "opid",
         "module-field": "module",
         "timestamp-format": [
