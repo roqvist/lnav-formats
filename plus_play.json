@@ -1,0 +1,41 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "timestamp-field": "timestamp",
+    "timestamp-format": [ "%Y-%m-%d %H:%M:%S" ],
+    "url": "https://regex101.com/r/xNqkST/",
+    "plus_play": {
+        "description": "Format file generated from regex101 entry -- https://regex101.com/r/GHsYv4/1",
+        "regex": {
+            "std": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2})\\s+\\[(?<level>[A-Za-z]+)\\]\\s+\\[(?<type>[^\\]\\s]+)?\\]\\s+\\[(?<thread>\\d+)\\]\\s(?<body>.*)$"
+            }
+        },
+        "level": {
+            "error": "Error",
+            "warning": "Warning",
+            "info": "Information",
+            "debug": "Debug",
+            "trace": "Trace",
+            "debug2": "Verbose"
+        },
+        "value": {
+            "thread": {
+                "kind": "integer",
+                "identifier": true
+            },
+            "type": {
+                "kind": "string",
+                "identifier": true
+            },
+            "level": {
+                "kind": "string",
+                "identifier": true
+            }
+        },
+        "sample": [
+            {
+                "line": "2024-04-10 11:18:18 [Information] [Microsoft.AspNetCore.Hosting.Diagnostics] [12] Request finished \"HTTP/1.1\" \"GET\" \"http\"://\"localhost:5288\"\"\"\"/Papirfly.Plus.Play.styles.css\"\"\" - 200 1545 \"text/css\""
+            }
+        ]
+    }
+}
